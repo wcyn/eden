@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>Sahana Eden Humanitarian Management Platform</title>
+
+
+<meta name="application-name" content="eden" />
+
+
+
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+
+<link rel="shortcut icon" href="/eden/static/favicon.ico" type="image/x-icon" />
+
+
+
+<style type="text/css">
+
+ body
+ {
+      direction:ltr;
+ }
+.background 
+{
+width: 1920 px;
+height: 1200 px;
+padding:0px;
+background-image: url(http://i.imgur.com/RbYUD.jpg);
+
+/* Safari and Chrome */
+-webkit-background-size: 100% 100%;
+
+/* Firefox */
+-moz-background-size: 100% 100%;
+
+/* Internet Explorer */
+-ms-background-size: 100% 100%;
+
+/* Opera */
+-o-background-size: 100% 100%;
+
+/* CSS3 */
+background-size: 100% 100%;
+}
+.button
+{
+	-moz-box-shadow:inset 50px 50px 0px -50px #fce2c1;
+	-webkit-box-shadow:inset 50px 50px 0px -50px #fce2c1;
+	box-shadow:inset 50px 50px 0px -50px #fce2c1;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e6ed9c), color-stop(1, #d6d97b) );
+	background:-moz-linear-gradient( center top, #e6ed9c 5%, #d6d97b 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6ed9c', endColorstr='#d6d97b');
+	background-color:#e6ed9c;
+	border:5px solid #ebf29e;
+	display:inline-block;
+	color:#3d4a0b;
+	font-family:Verdana;
+	font-size:15px;
+	font-weight:bold;
+	padding:0px 0px;
+	text-decoration:none;
+	text-shadow:0px 1px 25px #cc9f52;
+}
+.button:hover 
+{
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d6d97b), color-stop(1, #e6ed9c) );
+	background:-moz-linear-gradient( center top, #d6d97b 5%, #e6ed9c 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d6d97b', endColorstr='#e6ed9c');
+	background-color:#d6d97b;
+}
+.button:active
+{
+	position:relative;
+	top:1px;
+}
+.button2
+{
+	-moz-box-shadow:inset 50px 50px 0px -50px #fce2c1;
+	-webkit-box-shadow:inset 50px 50px 0px -50px #fce2c1;
+	box-shadow:inset 50px 50px 0px -50px #fce2c1;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e6ed9c), color-stop(1, #d6d97b) );
+	background:-moz-linear-gradient( center top, #e6ed9c 5%, #d6d97b 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6ed9c', endColorstr='#d6d97b');
+	background-color:rgba(193, 80, 0, 0.23)
+	border:6px solid #E8EC98;
+	display:inline-block;
+	color:#3d4a0b;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:21px;
+	font-weight:bold;
+	padding:2px 2px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #cc9f52;
+}
+.button2:hover 
+{
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d6d97b), color-stop(1, #e6ed9c) );
+	background:-moz-linear-gradient( center top, #d6d97b 5%, #e6ed9c 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d6d97b', endColorstr='#e6ed9c');
+	background-color:#d6d97b;
+}
+.button2:active
+{
+	position:relative;
+	top:4px;
+}
+#font-style  
+{
+     font-family:Impact, Charcoal, sans-serif;
+	 font-size:34px;
+	 color:#5D0000;
+	 background-color:rgba(194, 171, 67, 0.23);
+	 filter: alpha(opacity=0);
+	 padding: 5px;
+	 width: 100%;
+}
+div#container
+{
+    padding: 2px;
+    background-repeat: repeat;
+    width: 30%;
+	body-align: left;
+    text-align: center;
+    filter: alpha(opacity=0);
+    -mos-opacity: 0.21;
+	z-index:9;
+	background:rgba(248, 236, 153, 0.45)
+}
+div#container2
+{
+    padding: 2px;
+    background-repeat: repeat;
+    width: 100%;
+	body-align: left;
+    text-align: center;
+    filter: alpha(opacity=0);
+    -mos-opacity: 0.21;
+	z-index:9;
+	background:rgba(248, 236, 153, 0.45)
+}
+.relative
+{
+position: relative;
+}
+.absolute
+{
+position:absolute;
+}
+.menu_box
+{
+    width: 75%;
+    padding:10px;
+    border:3px solid rgba(0, 0, 0, 0.1);
+    margin:2px;
+    body-align: center;
+    text-align: center;	
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+input
+{
+    width: 120px;
+}
+.center
+{
+     margin-right:auto;
+	 margin-left:auto;
+/* used to center align the semi transparent container */	 
+} 
+#center2
+{
+     margin-right:auto;
+	 margin-left:auto;
+}	 
+.right
+{
+     margin-left:auto;
+	 margin-right: 0px;
+}
+.left
+{
+     margin-left: 0px;
+     margin-right:auto
+}	 
+h3
+{
+     font-family:Verdana, Geneva, sans-serif;
+	 font-size: 25px;
+	 color:#772B09;
+     opacity: 0.99;
+}	 
+ul 
+{
+  font-family: Arial, Verdana;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 1010;
+}
+ul li 
+{
+  display: block;
+  position: relative;
+  float: left;
+}
+li ul 
+{ 
+display: none; 
+}
+ul li a 
+{
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  border-top: 1px solid #ffffff;
+  padding: 5px 15px 5px 15px;
+  background: #2C5463;
+  margin-left: 1px;
+  white-space: nowrap;
+}
+ul li a:hover 
+{ 
+background: #617F8A; 
+}
+li:hover ul 
+{
+  display: block;
+  position: absolute;
+}
+li:hover li 
+{
+  float: none;
+  font-size: 11px;
+}
+li:hover a 
+{ 
+background: #617F8A; 
+}
+li:hover li a:hover 
+{ background: #95A9B1; 
+}
+.float_left
+{
+float:left;
+}	 
+
+</style>
+
+ 
+ <link href="" rel="" type="text/css" />
+
+
+ <link href="" rel="stylesheet" type="text/css" media="screen" charset="utf-8" />
+
+
+
+<script type="text/javascript">function s3_debug(){}</script>
+
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+ <script src="http://extjs.cachefly.net/ext-3.4.0/adapter/jquery/ext-jquery-adapter.js" type="text/javascript"></script>
+ <script src="http://extjs.cachefly.net/ext-3.4.0/ext-all.js" type="text/javascript"></script>
+ <script src="http://extjs.cachefly.net/ext-3.4.0/src/locale/ext-lang-en.js" type="text/javascript"></script>  
+
+
+<script src="/eden/static/scripts/S3/S3.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">//<![CDATA[
+
+
+i18n=Object()
+i18n.language='en'
+i18n.ajax_wht='We have tried'
+i18n.ajax_gvn='times and it is still not working. We give in. Sorry.'
+i18n.ajax_500='Sorry - the server has a problem, please try again later.'
+i18n.ajax_dwn='There was a problem, sorry, please try again later.'
+i18n.ajax_get='getting'
+i18n.ajax_fmd='form data'
+i18n.ajax_rtr='retry'
+i18n.unsaved_changes="You have unsaved changes. Click Cancel now, then 'Save' to save them. Click OK now to discard them."
+i18n.hour='Hour'
+i18n.minute='Minute'
+i18n.delete_confirmation='Are you sure you want to delete this record?'
+i18n.close_map='Close map'
+i18n.no_match='No match'
+i18n.in_inv='in Stock'
+i18n.no_packs='No Packs for Item'
+i18n.input_number='Please enter a number only'
+i18n.ac_widget_more_results='Greater than 10 matches. Please refine search further'
+
+S3.Ap='/eden'
+S3.rtl=false
+S3.interactive=true
+//]]></script>
+</head>
+
+ 
+
+<body class="background" href="#">
+ <div>
+ <ul>
+  <li class="left"><a class="button" href="#"><span>Home</span></a></li>
+  <li class="left"><a class="button" href="#"><span>Organisations</span></a></li>
+  <li class="left"><a class="button" href="#"><span>Staff</span></a></li>
+  <li class="left"><a class="button" href="#"><span>Volunteers</span></a></li>
+  <li class="left"><a class="button" href="#"><span>Projects</span></a></li>
+  <li class="left"><a class="button" href="#"><span>Warehouses</span></a></li>
+  <li class="left"><a class="button" href="#"><span>Assets</span></a></li>
+  <li class="left"><a class="button" href="#"><span>Surveys</span></a></li>
+  <li class="left"><a class="button" href="#"><span>Map</span></a></li>
+  <ul>
+  <li class="left"><a class ="button" href="#"><span>more</span></a>
+    <ul>
+    <li><a href="">Content Management</a></li>
+    <li><a href="">Documents</a></li>
+    <li><a href="">Vehicles</a></li>
+	<li><a href="">Requests</a></li>
+    <li><a href="">Shelters</a></li>
+    <li><a href="">Hospitals</a></li>
+    <li><a href="">Incidents</a></li>
+    <li><a href="">Disaster Victim Identification</a></li>
+    <li><a href="">Disaster Victim Registry</a></li>
+    <li><a href="">Transport</a></li>
+    <li><a href="">CAP</a></li>
+    <li><a href="">Security</a></li>
+    </ul>
+  </li>
+  
+     <li class="right"><a class="button" href="/eden/default/help">Help</a>	 
+   <ul> 
+     <li><a class="" href="/eden/default/contact">Contact us</a></li>
+     <li><a class="" href="/eden/default/about">About</a></li>
+     </ul>
+	</li>	
+	
+  
+	 <li class="right"><a class="button" href="/eden/default/user/login?_next=%2Feden%2Fdefault%2Findex%3F_language%3Den" id="auth_menu_login">Login</a>	 
+	<ul> 
+	 <li><a class="" href="/eden/default/user/login?_next=%2Feden%2Fdefault%2Findex%3F_language%3Den">Login</a></li>
+	 <li><a class="" href="/eden/default/user/register?_next=%2Feden%2Fdefault%2Findex%3F_language%3Den">Register</a></li>
+	 <li><a class="" href="/eden/default/user/retrieve_password">Lost Password</a></li>
+	 </ul>
+	</li>
+</ul>
+
+	  <li class="right"><a class="button" href="/eden/default/index">Language</a>	  
+	  <ul>
+	  <li><a class="ltr" href="/eden/default/index?_language=ar">العربية</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=zh-cn">中文 (简体)</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=zh-tw">中文 (繁體)</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=en">English</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=fr">Français</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=de">Deutsch</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=el">ελληνικά</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=it">Italiano</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=ja">日本語</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=ko">한국어</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=pt">Português</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=pt-br">Português (Brasil)</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=ru">русский</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=es">Español</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=tl">Tagalog</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=ur">اردو</a></li>
+	  <li><a class="ltr" href="/eden/default/index?_language=vi">Tiếng Việt</a></li>
+	  </ul>
+	 </li>
+	</ul>
+	</ul>
+</div>
+<br> 
+<div class="height">
+<h2 align='center' id="font-style">Sahana Eden Humanitarian Management Platform</h2>
+</div>
+<div class='menu_box' id="center2">
+<div class="relative">
+<div id='container' class="float_left">
+<h3>Situation</h3>
+<pre>
+<a class="button2" href="#"><div>Staff</div></a><br>
+<a class="button2" href="#"><div>Volunteers</div></a><br>
+<a class="button2" href="#"><div>Incidents</div></a><br>
+<a class="button2" href="#"><div>Assessments</div></a><br>
+<a class="button2" href="#"><div >Assets</div></a><br>
+<a class="button2" href="#"><div >Inventory Items</div></a>
+</pre>	  
+</div>
+
+<div class="relative">
+<div id='container' class="float_left">
+<h3>Decision</h3>
+      <a class="button2" href="#"><div >Requests</div></a></div>
+</div>
+<div class="relative">
+<div id='container' class="float_left">
+  <h3>Response</h3>
+<pre>
+<a class="button2" href="/eden/project/project"><div >Projects</div></a><br>
+<a class="button2" href="/eden/req/commit"><div >Commitments</div></a><br>
+<a class="button2" href="/eden/inv/send"><div >Sent Shipments</div></a><br>
+<a class="button2" href="/eden/inv/recv"><div >Received Shipments</div></a>
+</pre>
+</div>
+</div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="menu_box" id="center2">
+<div id='container2' class='center'>
+<div style="z-index:1000;">
+<h3>Facilities</h3>
+<pre><a class="button2" href="/eden/org/facility"><div >Facilities</div></a><br>
+<a class="button2" href="/eden/hms/hospital"><div >Hospitals</div></a><br>
+<a class="button2" href="/eden/org/office"><div >Offices</div></a><br>
+<a class="button2" href="/eden/cr/shelter"><div >Shelters</div></a><br>
+<a class="button2" href="/eden/inv/warehouse"><div >Warehouses</div></a>
+</pre>
+<div>
+
+<div class="menu_box button" id="manage_facility_box"><h3>Manage Your Facilities</h3><select id="manage_facility_select" style="max-width:400px;"><option value="51">BOX (Warehouse)</option><option value="42">COOLER WAREHOUSE (Warehouse)</option><option value="23">Davenport (Office)</option><option value="41">Environment (Airport)</option><option value="44">FLY AWAY (Airport)</option><option value="34">Main (Office)</option><option value="20">Modern Senior Secondary School (Office)</option><option value="21">Modern Warehouse (Warehouse)</option><option value="38">My Warehouse 1 (Warehouse)</option><option value="39">My Warehouse 2 (Warehouse)</option><option value="46">OFFICEs (Office)</option><option value="43">Some Place (Warehouse)</option><option value="9">Test (Hospital)</option><option value="40">Test Facility (Facility)</option><option value="32">adas (Hospital)</option><option value="33">asdf (Hospital)</option><option value="49">asdf (Hospital)</option><option value="7">bfdgfd (Hospital)</option><option value="19">blahblah (Office)</option><option value="10">cdsaf (Office)</option><option value="13">dfdsf (Shelter)</option><option value="48">dgdsf (Office)</option><option value="24">eth (Hospital)</option><option value="27">f (Hospital)</option><option value="29">farel (Hospital)</option><option value="3">fdsfsdf (Hospital)</option><option value="12">fdsfsfds (Airport)</option><option value="25">fg (Hospital)</option><option value="2">gfdgdf (Hospital)</option><option value="5">gfdgdfgdg (Hospital)</option><option value="1">gfgdf (Hospital)</option><option value="45">hello (Warehouse)</option><option value="26">jhhjjghfmbb (Hospital)</option><option value="30">jkh (Hospital)</option><option value="31">jsdfhlasd (Hospital)</option><option value="28">sd (Hospital)</option><option value="16">seaplace (Seaport)</option><option value="14">test hospital (Hospital)</option><option value="15">test hospital two (Hospital)</option><option value="17">tin (Office)</option><option value="18">war (Warehouse)</option></select><a class="action-btn" href="/eden/default/site/51" id="manage_facility_btn">Go</a></div>
+<div class="menu_box button" id="org_box"><h3>Organizations</h3><a class="action-btn" href="/eden/org/organisation/create" id="add-btn" style="margin-right: 10px;">Add Organization</a><form action="" enctype="multipart/form-data" method="post"><table class="dataTable display" id="org_list_1"><thead><tr><th>Id</th><th>Name</th></tr></thead><tbody><tr class="even"><td>12</td><td>AAA</td></tr></tbody></table><input id="org_list_1_configurations" name="config" type="hidden" value="{&quot;sDom&quot;: &quot;fril&lt;\&quot;dataTable_table\&quot;t&gt;pi&quot;, &quot;pagination&quot;: &quot;true&quot;, &quot;displayLength&quot;: 10, &quot;group&quot;: [], &quot;bulkCol&quot;: 0, &quot;actionCol&quot;: 0, &quot;groupTitles&quot;: [], &quot;groupTotals&quot;: [], &quot;ajaxUrl&quot;: &quot;/eden/default/organisation.aadata?id=org_list_1&quot;, &quot;rowActions&quot;: [{&quot;url&quot;: &quot;/eden/org/organisation/%5Bid%5D/update&quot;, &quot;_class&quot;: &quot;action-btn&quot;, &quot;label&quot;: &quot;Open&quot;}, {&quot;url&quot;: &quot;/eden/org/organisation/%5Bid%5D/delete&quot;, &quot;_class&quot;: &quot;action-btn&quot;, &quot;label&quot;: &quot;Delete&quot;}], &quot;rowStyles&quot;: [], &quot;groupSpacing&quot;: &quot;false&quot;, &quot;shrinkGroupedRows&quot;: &quot;false&quot;, &quot;bulkActions&quot;: null, &quot;bFilter&quot;: &quot;true&quot;, &quot;textMaxLength&quot;: 80, &quot;aaSort&quot;: [[1, &quot;asc&quot;]], &quot;textShrinkLength&quot;: 75, &quot;groupIcon&quot;: [], &quot;id&quot;: &quot;org_list_1&quot;, &quot;paginationType&quot;: &quot;full_numbers&quot;}" /><input id="org_list_1_dataTable_cache" name="cache" type="hidden" value="{&quot;iCacheUpper&quot;: 1, &quot;lastJson&quot;: {&quot;iTotalRecords&quot;: 14, &quot;dataTable_id&quot;: &quot;org_list_1&quot;, &quot;dataTable_filter&quot;: null, &quot;dataTable_groupTotals&quot;: [], &quot;sEcho&quot;: 1, &quot;dataTable_sort&quot;: [[1, &quot;asc&quot;]], &quot;aaData&quot;: [[&quot;12&quot;, &quot;AAA&quot;]], &quot;iTotalDisplayRecords&quot;: 14}, &quot;iCacheLower&quot;: 0}" /></form></div>
+</div>
+
+
+ <div id='center2' class='menu_box'>
+  
+  
+   <div id='register_form' >
+    <div><h3>Register</h3><p>If you would like to help, then please <b>sign-up now</b></p></div>
+    
+
+
+
+
+<div class='form-container'>
+<form action="" enctype="multipart/form-data" id="regform" method="post"><table><tr id="auth_user_first_name__row"><td class="w2p_fl"><label for="auth_user_first_name" id="auth_user_first_name__label"><div>First Name:<span class="req"> *</span></div></label></td><td class="w2p_fw"><input class="string" id="auth_user_first_name" name="first_name" type="text" value="" /></td><td class="w2p_fc"></td></tr><tr id="auth_user_last_name__row"><td class="w2p_fl"><label for="auth_user_last_name" id="auth_user_last_name__label">Last Name:</label></td><td class="w2p_fw"><input class="string" id="auth_user_last_name" name="last_name" type="text" value="" /></td><td class="w2p_fc"></td></tr><tr id="auth_user_email__row"><td class="w2p_fl"><label for="auth_user_email" id="auth_user_email__label"><div>E-mail:<span class="req"> *</span></div></label></td><td class="w2p_fw"><input class="string" id="auth_user_email" name="email" type="text" value="" /></td><td class="w2p_fc"></td></tr><tr id="auth_user_password__row"><td class="w2p_fl"><label for="auth_user_password" id="auth_user_password__label"><div>Password:<span class="req"> *</span></div></label></td><td class="w2p_fw"><input class="password" id="auth_user_password" name="password" type="password" value="" /></td><td class="w2p_fc"></td></tr><tr id="auth_user_password_two__row"><td class="w2p_fl"><label for="password_two" id="auth_user_password_two__label">Verify Password:</label><span class="req">*</span></td><td><input id="auth_user_password_two" name="password_two" type="password" /></td><td></td></tr><tr id="auth_user_language__row"><td class="w2p_fl"><label for="auth_user_language" id="auth_user_language__label">Language:</label></td><td class="w2p_fw"><select class="generic-widget" id="auth_user_language" name="language"><option value="ar">العربية</option><option value="zh-cn">中文 (简体)</option><option value="zh-tw">中文 (繁體)</option><option selected="selected" value="en">English</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="el">ελληνικά</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="pt">Português</option><option value="pt-br">Português (Brasil)</option><option value="ru">русский</option><option value="es">Español</option><option value="tl">Tagalog</option><option value="ur">اردو</option><option value="vi">Tiếng Việt</option></select></td><td class="w2p_fc"><div class="tooltip" title="Language|The language you wish the site to be displayed in."></div></td></tr><tr id="submit_record__row"><td class="w2p_fl"></td><td class="w2p_fw"><input type="submit" value="Register" /><a class="action-lnk" href="/eden/default/user/login" id="login-btn">Login</a></td><td class="w2p_fc"></td></tr></table><div class="hidden"><input name="_next" type="hidden" /><input name="_formkey" type="hidden" value="bb16ce3e-1e0e-48d8-b84a-74d7fba376b4" /><input name="_formname" type="hidden" value="register" /></div></form>
+
+
+</div>
+   </div>
+  
+  
+   <div id='login_form' class='hide'>
+    <div><h3>Login</h3><p>Registered users can <b>login</b> to access the system</p></div>
+    
+
+
+
+<div class='form-container'>
+<form action="" enctype="multipart/form-data" method="post"><table><tr id="auth_user_email__row"><td class="w2p_fl"><label for="auth_user_email" id="auth_user_email__label">E-mail: </label></td><td class="w2p_fw"><input class="string" id="auth_user_email" name="email" type="text" value="" /></td><td class="w2p_fc"></td></tr><tr id="auth_user_password__row"><td class="w2p_fl"><label for="auth_user_password" id="auth_user_password__label">Password: </label></td><td class="w2p_fw"><input class="password" id="auth_user_password" name="password" type="password" value="" /></td><td class="w2p_fc"></td></tr><tr id="auth_user_remember__row"><td class="w2p_fl"><label>&nbsp;</label></td><td class="w2p_fw"><div>&nbsp;<input class="checkbox" id="auth_user_remember" name="remember" type="checkbox" value="on" />&nbsp;&nbsp;<label for="auth_user_remember">Remember Me</label></div></td><td class="w2p_fc"></td></tr><tr id="submit_record__row"><td class="w2p_fl"></td><td class="w2p_fw"><input type="submit" value="Login" /><a class="action-lnk" href="/eden/default/user/register" id="register-btn">Register for Account</a><a class="action-lnk" href="/eden/default/user/retrieve_password">Lost Password</a></td><td class="w2p_fc"></td></tr></table><div class="hidden"><input name="_next" type="hidden" /><input name="_formkey" type="hidden" value="12ddc204-3f88-422e-a0d5-60880f252bcb" /><input name="_formname" type="hidden" value="login" /></div></form>
+
+
+</div>
+
+
+   </div>
+  
+ </div>
+
+
+
+</div>
+</div>
+<div id='about'>
+ <p>
+ For more details on the Sahana Eden system, see the <a href="http://eden.sahanafoundation.org" target="_blank">Sahana Eden Website</a>
+ <br/>For live help from the Sahana community on using this application, go to <a href="http://eden.sahanafoundation.org/wiki/Chat" target="_blank">Sahana Community Chat</a>
+ </p>
+</div>
+
+<div id='feed-control'>
+ <span style="color:#676767;font-size:11px;margin:10px;padding:4px;">Loading...</span>
+</div>
+
+
+    </div>
+   </div>
+  </div>
+ </div>
+ <div id='footer'>
+  
+<p id="poweredby">
+    <img src='/eden/static/img/S3menu_logo.png' width='30' height='28' style='vertical-align: middle;' alt='Powered by Sahana Eden' /><a target='_blank' href='http://eden.sahanafoundation.org' title='Powered by Sahana Eden'>Powered by Sahana Eden</a>
+    <!--
+    <p>&nbsp;</p>
+    <a target='_blank' href='http://www.zen.co.uk' title='Hosted by Zen Internet'><img src='/eden/static/img/logo_zen.gif' width='24' height='24' style='vertical-align: middle;' alt='Hosted by Zen Internet' />Hosted by Zen Internet</a>
+    -->
+</p>
+<div class="cf"></div>
+
+
+  
+ </div>
+
+
+
+ <script src="/eden/static/scripts/jquery.validate.min.js"></script>
+
+ <script src="/eden/static/scripts/jquery.pstrength.2.1.0.min.js"></script>
+
+ <script src="http://www.google.com/jsapi?key=notsupplied-wizard"></script>
+
+ <script src="http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js"></script>
+
+<script type="text/javascript">//<![CDATA[
+
+ 
+function LoadDynamicFeedControl(){
+ var feeds=[
+  {title:'Eden',
+url:'http://eden.sahanafoundation.org/timeline?ticket=on&changeset=on&milestone=on&wiki=on&max=50&daysback=90&format=rss'},
+{title:'Twitter',
+url:'https://search.twitter.com/search.rss?q=from%3ASahanaFOSS'}
+ ]
+ var options={
+  feedCycleTime:300000,
+  numResults:5,
+  stacked:true,
+  horizontal:false,
+  title:"News"
+ }
+ new GFdynamicFeedControl(feeds,'feed-control',options)
+}
+google.load('feeds','1')
+google.setOnLoadCallback(LoadDynamicFeedControl)
+
+
+$(document).ready(function(){
+ 
+  
+$('#regform').validate({
+ errorClass:'req',
+ rules:{
+  first_name:{
+   required:true
+  },
+  email:{
+   required:true,
+   email:true
+  },
+  password:{
+   required:true
+  },
+  password_two:{
+   required:true,
+   equalTo:".password:first"
+  }
+ },
+ messages:{
+  first_name:"Enter your first name",
+  password:{
+   required:"Provide a password"
+  },
+  password_two:{
+   required:"Repeat your password",
+   equalTo:"Enter the same password as above"
+  },
+  email:{
+   required:"Please enter a valid email address",
+   email:"Please enter a valid email address"
+  }
+ },
+ errorPlacement:function(error,element){
+  error.appendTo(element.parent().next())
+ },
+ submitHandler:function(form){
+  form.submit()
+ }
+})
+var MinPasswordChar=4;
+ $('.password:first').pstrength({minchar:MinPasswordChar,minchar_label:null});
+
+ 
+  $('#register-btn').attr('href','#register')
+$('#login-btn').attr('href','#login')
+
+$('#register-btn').click(function(){
+ $('#register_form').removeClass('hide')
+ $('#login_form').addClass('hide')
+})
+$('#login-btn').click(function(){
+ $('#register_form').addClass('hide')
+ $('#login_form').removeClass('hide')
+})
+ 
+})
+
+
+//]]></script>
+
+</body>
+</html>
